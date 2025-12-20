@@ -283,7 +283,7 @@ class CommunicationHandler(BaseHTTPRequestHandler):
                             'message': msg.get('message', ''),
                             'timestamp': msg.get('timestamp', '')
                         })
-            except:
+            except (json.JSONDecodeError, FileNotFoundError, PermissionError, KeyError):
                 pass
         
         # Load assistant messages (outbox)
@@ -297,7 +297,7 @@ class CommunicationHandler(BaseHTTPRequestHandler):
                             'message': msg.get('message', ''),
                             'timestamp': msg.get('timestamp', '')
                         })
-            except:
+            except (json.JSONDecodeError, FileNotFoundError, PermissionError, KeyError):
                 pass
         
         # Sort by timestamp

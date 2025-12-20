@@ -49,7 +49,7 @@ class AssistantBridge:
             try:
                 with open(self.outbox_file, 'r') as f:
                     messages = json.load(f)
-            except:
+            except (json.JSONDecodeError, FileNotFoundError, PermissionError):
                 messages = []
         
         messages.append({
