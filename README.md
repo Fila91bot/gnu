@@ -17,20 +17,27 @@ This project provides a minimal GUI window for bidirectional communication with 
 
 ## Requirements
 
-- Python 3.x (with tkinter - usually included by default)
+- Python 3.x
 - No additional dependencies needed!
 
 ## Quick Start
 
 ### 1. Start the Communication Window
 
-Run the communication window to start interacting:
+You have two options for the user interface:
 
+**Option A: Desktop GUI (tkinter)**
 ```bash
 python3 communication_window.py
 ```
 
-This will open a GUI window where you can:
+**Option B: Web Browser Interface** (if tkinter is not available)
+```bash
+python3 web_communication.py
+```
+This will open automatically in your browser at http://localhost:8080
+
+Both interfaces allow you to:
 - Type messages to your assistant
 - Receive responses from your assistant
 - View conversation history
@@ -92,8 +99,11 @@ File format:
 
 ## Files
 
-- `communication_window.py` - Main GUI application for user interaction
+- `communication_window.py` - Desktop GUI application (tkinter)
+- `web_communication.py` - Web browser interface (alternative to GUI)
 - `assistant_bridge.py` - Bridge module for assistant integration
+- `example_assistant.py` - Example assistant implementation
+- `test_communication.py` - Test suite for the communication system
 - `assistant_inbox.json` - Messages from user to assistant (auto-created)
 - `assistant_outbox.json` - Messages from assistant to user (auto-created)
 
