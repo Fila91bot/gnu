@@ -12,8 +12,8 @@ import time
 class AssistantBridge:
     def __init__(self):
         # File paths for bidirectional communication with the assistant
-        self.inbox_file = "assistant_inbox.json"  # Messages from user to assistant
-        self.outbox_file = "assistant_outbox.json"  # Messages from assistant to user
+        self.inbox_file = "assistant_inbox.json"  # Messages to assistant (from user)
+        self.outbox_file = "assistant_outbox.json"  # Messages from assistant (to user)
         
     def get_new_messages(self):
         """Get unread messages from user"""
